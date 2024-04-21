@@ -1,4 +1,4 @@
-•	A Resevoir is taken out of action 18years from now, or there is a commitment to send water to Southern water etc, creating a deficit regardless of demand option chosen. 
+•	A Resevoir is taken out of action 18years from now, or there is a commitment to send water elsewhere, creating a deficit regardless of demand option chosen. 
 •	Spend pattern of demand option 2, 3 & 5 suggest a rollout of meters, with spike in spend in the next AMP and subsequent smaller spikes (for replacement). 
  
 Ignoring CAPEX for now, Observing Value in terms of  Benefit/ OPEX (Ml/£m),
