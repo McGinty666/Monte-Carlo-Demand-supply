@@ -11,4 +11,4 @@ o	import from neighbouring company A,
 o	import from neighbouring company C 
 o	New Reservoir C
 o	Drought option is probably better a good backup plan to include in any combination given low lead in period (hosepipe ban), 
-Looking at the ML/ Opex for supply  Options there are some clear favourites that should be done as a priority, for example New Resevoir A. 
+
