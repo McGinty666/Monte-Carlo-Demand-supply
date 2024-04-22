@@ -1,5 +1,7 @@
 Created on Mon Apr 22 09:02:50 2024
 
+Created on Mon Apr 22 09:02:50 2024
+
 @author: RMCGINT
 """
 import numpy as np
@@ -157,3 +159,19 @@ plt.title('Total Option Cost by Year')
 plt.grid(True)
 plt.legend()
 plt.show()
+
+
+CAPEX = sum(selected_supply_option_CAPEX[:max_n])
+total_option_cost_cum = np.cumsum(total_option_cost_by_year) + CAPEX
+
+print ('total CAPEX='+ str(CAPEX))
+
+# Create a simple line plot
+plt.figure(figsize=(10, 6))
+plt.plot(years, total_option_cost_cum, marker='o', linestyle='-', color='b')
+plt.title("Cumulative Total Option Cost vs. Years")
+plt.xlabel("Years")
+plt.ylabel("Cumulative Total Option Cost")
+plt.grid(True)
+plt.show()
+
