@@ -1,16 +1,15 @@
-Created on Mon Apr 22 09:02:50 2024
-
-Created on Mon Apr 22 09:02:50 2024
+#Created on Mon Apr 22 09:02:50 2024
+'''
 
 @author: RMCGINT
-"""
+'''
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import random
 
 # Specify the path to your Excel file
-file_path = r"C:\Users\RMCGINT\OneDrive - Wessex Water\Python\InterviewTask_v1.xlsx"
+file_path = r"E:\Work\InterviewTask_v1.xlsx"
 
 # Read the sheets into dataframes
 demand_benefit_df = pd.read_excel(file_path, sheet_name="demand_benefit_sheet")
@@ -92,7 +91,7 @@ elif selected_demand_vector is demand_op_4_ben:
 elif selected_demand_vector is demand_op_5_ben:
     selected_demand_option = "Demand Option 5"
 
-print(f"Selected demand option: {selected_demand_option} chosen")
+
 
 if selected_demand_vector is demand_op_1_ben:
     selected_demand_cost = demand_op_1_cost
@@ -134,9 +133,19 @@ for i in range(len(years)):
 
 # Print the maximum value of n achieved
 print(f"Maximum value of n achieved (number of supply options chosen): {max_n}")
-
+print(f"Selected demand option: {selected_demand_option} chosen")
 print("Supply Options selected:")
 print(selected_supply_option[:max_n])
+
+
+# Calculate total option cost by adding demand option cost and supply option cost
+total_option_cost_by_year = selected_demand_cost + yearly_OPEX
+CAPEX = sum(selected_supply_option_CAPEX[:max_n])
+total_option_cost_cum = np.cumsum(total_option_cost_by_year) + CAPEX
+
+print ('total CAPEX='+ str(CAPEX))
+print("Final value in total_option_cost_cum:", total_option_cost_cum.iloc[-1])
+
 
 
 # Create the plot
@@ -149,9 +158,6 @@ plt.grid(True)
 plt.show()  
 
 
-# Calculate total option cost by adding demand option cost and supply option cost
-total_option_cost_by_year = selected_demand_cost + yearly_OPEX
-
 plt.plot(years, total_option_cost_by_year, marker='o', label='Total Option Cost')
 plt.xlabel('Years')
 plt.ylabel('Total Option Cost')
@@ -161,11 +167,6 @@ plt.legend()
 plt.show()
 
 
-CAPEX = sum(selected_supply_option_CAPEX[:max_n])
-total_option_cost_cum = np.cumsum(total_option_cost_by_year) + CAPEX
-
-print ('total CAPEX='+ str(CAPEX))
-
 # Create a simple line plot
 plt.figure(figsize=(10, 6))
 plt.plot(years, total_option_cost_cum, marker='o', linestyle='-', color='b')
@@ -174,4 +175,3 @@ plt.xlabel("Years")
 plt.ylabel("Cumulative Total Option Cost")
 plt.grid(True)
 plt.show()
-
