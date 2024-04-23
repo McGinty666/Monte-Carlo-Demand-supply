@@ -15,7 +15,7 @@ file_path = r"C:\Users\RMCGINT\OneDrive - Wessex Water\Python\InterviewTask_v1.x
 
 
 
-num_iterations = 50
+num_iterations = 100
 
 # Initialize variables to store the minimum total_option_cost_cum and its corresponding options
 min_total_option_cost_cum = float('inf')
@@ -172,15 +172,15 @@ print ('best_supply_options: ' + str(best_supply_options))
 
 # Create the plot
 plt.figure(figsize=(8, 6))
-plt.plot(years, best_overall_benefit, marker='o', linestyle='-', color='b')
+plt.plot(years, best_overall_benefit, marker='o', linestyle='-', color='r')
 plt.title("Best Overall Benefit vs. Year")
 plt.xlabel("Year")
 plt.ylabel("Best Overall Benefit")
 plt.grid(True)
 plt.show()  
 
-
-plt.plot(years, best_total_option_cost_by_year, marker='o', label='Total Option Cost')
+plt.figure(figsize=(8, 6))
+plt.plot(years, best_total_option_cost_by_year, marker='o', linestyle='-', color='r', label='Total Option Cost')
 plt.xlabel('Years')
 plt.ylabel('Best Total Option Cost')
 plt.title('Best Total Option Cost by Year')
@@ -191,7 +191,7 @@ plt.show()
 
 # Create a simple line plot
 plt.figure(figsize=(10, 6))
-plt.plot(years, best_total_option_cost_cum, marker='o', linestyle='-', color='b')
+plt.plot(years, best_total_option_cost_cum, marker='o', linestyle='-', color='r')
 plt.title("Best Cumulative Total Option Cost vs. Years")
 plt.xlabel("Years")
 plt.ylabel("Best Cumulative Total Option Cost")
@@ -207,11 +207,6 @@ print("Random Supply Options selected:")
 print(best_supply_options[:max_n])
 print ('total CAPEX='+ str(CAPEX))
 print("Final value in total_option_cost_cum:", total_option_cost_cum.iloc[-1])
-
-
-
-
-
 
 
 
