@@ -1,3 +1,5 @@
+
+
 #Created on Mon Apr 22 09:02:50 2024
 '''
 
@@ -9,7 +11,7 @@ import matplotlib.pyplot as plt
 import random
 
 # Specify the path to your Excel file
-file_path = r"E:\Work\InterviewTask_v1.xlsx"
+file_path = r"C:\Users\RMCGINT\OneDrive - Wessex Water\Python\InterviewTask_v1.xlsx"
 
 
 
@@ -152,8 +154,12 @@ for iteration in range(num_iterations):
     
     if total_option_cost_cum.iloc[-1] < min_total_option_cost_cum:
         min_total_option_cost_cum = total_option_cost_cum.iloc[-1]
+        best_total_option_cost_cum = total_option_cost_cum
         best_demand_option = selected_demand_option
         best_supply_options = selected_supply_option[:max_n]
+        best_total_option_cost_by_year = total_option_cost_by_year
+        best_overall_benefit = overall_benefit
+        
 
 
 print ('min_total_option_cost_cum: '+ str(min_total_option_cost_cum))
@@ -162,20 +168,59 @@ print ('best_supply_options: ' + str(best_supply_options))
 
 
 
+
+
+# Create the plot
+plt.figure(figsize=(8, 6))
+plt.plot(years, best_overall_benefit, marker='o', linestyle='-', color='b')
+plt.title("Best Overall Benefit vs. Year")
+plt.xlabel("Year")
+plt.ylabel("Best Overall Benefit")
+plt.grid(True)
+plt.show()  
+
+
+plt.plot(years, best_total_option_cost_by_year, marker='o', label='Total Option Cost')
+plt.xlabel('Years')
+plt.ylabel('Best Total Option Cost')
+plt.title('Best Total Option Cost by Year')
+plt.grid(True)
+plt.legend()
+plt.show()
+
+
+# Create a simple line plot
+plt.figure(figsize=(10, 6))
+plt.plot(years, best_total_option_cost_cum, marker='o', linestyle='-', color='b')
+plt.title("Best Cumulative Total Option Cost vs. Years")
+plt.xlabel("Years")
+plt.ylabel("Best Cumulative Total Option Cost")
+plt.grid(True)
+plt.show()
+
+
+
 # Print the maximum value of n achieved
 print(f"Maximum value of n achieved (number of supply options chosen): {max_n}")
-print(f"Best demand option: {best_demand_option} chosen")
-print("Supply Options selected:")
+print(f"selected_demand_option: {selected_demand_option} chosen")
+print("Random Supply Options selected:")
 print(best_supply_options[:max_n])
 print ('total CAPEX='+ str(CAPEX))
 print("Final value in total_option_cost_cum:", total_option_cost_cum.iloc[-1])
 
 
 
+
+
+
+
+
+
+
 # Create the plot
 plt.figure(figsize=(8, 6))
 plt.plot(years, overall_benefit, marker='o', linestyle='-', color='b')
-plt.title("Overall Benefit vs. Year")
+plt.title("Random Overall Benefit vs. Year")
 plt.xlabel("Year")
 plt.ylabel("Overall Benefit")
 plt.grid(True)
@@ -185,7 +230,7 @@ plt.show()
 plt.plot(years, total_option_cost_by_year, marker='o', label='Total Option Cost')
 plt.xlabel('Years')
 plt.ylabel('Total Option Cost')
-plt.title('Total Option Cost by Year')
+plt.title('Random Total Option Cost by Year')
 plt.grid(True)
 plt.legend()
 plt.show()
@@ -194,7 +239,7 @@ plt.show()
 # Create a simple line plot
 plt.figure(figsize=(10, 6))
 plt.plot(years, total_option_cost_cum, marker='o', linestyle='-', color='b')
-plt.title("Cumulative Total Option Cost vs. Years")
+plt.title("Random Cumulative Total Option Cost vs. Years")
 plt.xlabel("Years")
 plt.ylabel("Cumulative Total Option Cost")
 plt.grid(True)
