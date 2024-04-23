@@ -1,4 +1,4 @@
-Initial observations, Observations 
+Initial observations, 
 
 A Resevoir is taken out of action 18years from now, or there is a commitment to send water elsewhere, creating a deficit regardless of demand option chosen. 
 Spend pattern of demand option 2, 3 & 5 suggest a rollout of meters, with spike in spend in the next AMP and subsequent smaller spikes (for replacement). 
